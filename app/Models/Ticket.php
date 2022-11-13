@@ -7,5 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Ticket extends Model
 {
+    public $incrementing = false;
+    
     use HasFactory;
 }
