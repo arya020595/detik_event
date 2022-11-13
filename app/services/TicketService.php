@@ -2,13 +2,14 @@
 
 namespace App\Services;
 use App\Models\Ticket;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class TicketService {
 
     public function show($request) {
         $tiket = Ticket::where('id', $request->route('ticketId'))
                        ->where('event_id', $request->route('eventId'))
-                       ->first();
+                       ->firstOrFail();
 
         return $tiket;
     }
@@ -16,7 +17,7 @@ class TicketService {
     public function update($request) {
         $tiket = Ticket::where('id', $request->route('ticketId'))
                        ->where('event_id', $request->route('eventId'))
-                       ->first();
+                       ->firstOrFail();
 
         $tiket->status = $request->get('status');
         $tiket->save();
