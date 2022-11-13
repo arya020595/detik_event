@@ -7,7 +7,7 @@ Run -> `php artisan migrate`
 
 #### 2. Seeding data "event" and "ticket"
 Run -> `php artisan db:seed --class=EventsTableSeeder` (seeding data event) \
-Run -> `LIMIT_DATA=10 EVENT_ID=1 php artisan db:seed --class=TicketsTableSeeder` (seeding data event)
+Run -> `LIMIT_DATA=10 EVENT_ID=1 php artisan db:seed --class=TicketsTableSeeder` (seeding data ticket)
 
 #### 3. Run Server
 Run -> `php artisan serve`
